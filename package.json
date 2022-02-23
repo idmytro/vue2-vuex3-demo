@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "eslint:all": "eslint . --ext .js,.vue"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -13,17 +14,23 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
+    "@babel/core": "^7.16.12",
+    "@babel/eslint-parser": "^7.16.5",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-airbnb": "^6.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-vue": "^8.0.3",
-    "eslint-plugin-vuejs-accessibility": "^1.1.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-vue-idmytro": "github:idmytro/eslint-config-airbnb-vue-idmytro",
+    "eslint-plugin-compat": "^4.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-jsdoc": "^37.7.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "eslint-plugin-vuejs-accessibility": "^1.1.1",
     "vue-template-compiler": "^2.6.14"
   }
 }

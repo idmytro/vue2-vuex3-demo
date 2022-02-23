@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <button type="button" @click="handleButtonClick">Set brands</button>
+    <button
+      type="button"
+      @click="handleButtonClick"
+    >
+      Set brands
+    </button>
     <p>{{ notOkBrands }}</p>
   </div>
 </template>
@@ -27,6 +32,7 @@ export default {
     /* works, but not Ok */
     ...mapState({
       notOkBrands: (state) => state.brands.brands,
+      conflictBrands: (state) => state.conflict.brands,
     }),
 
     /* debug store */
@@ -39,12 +45,12 @@ export default {
     /* or */
     ...mapMutations('shops', { setShops: 'setItems' }),
 
-    ...mapMutations(['setBrands']),
+    ...mapMutations(['setBrands', 'brands_setBrands']),
     /* or */
     ...mapMutations({ alsoSetBrands: 'setBrands' }),
 
     handleButtonClick () {
-      this.setBrands([1, 2, 3]);
+      this.brands_setBrands([1, 2, 3]);
     },
   },
 };

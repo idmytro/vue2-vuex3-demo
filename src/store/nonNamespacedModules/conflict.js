@@ -1,5 +1,5 @@
 const state = () => ({
-  brands: [],
+  brands: [4, 5, 6],
 });
 
 const getters = {
