@@ -10,3 +10,5 @@ export default new Vuex.Store({
     [SHOPS_MODULE]: shops,
   },
 });
+
+export { SHOPS_MODULE };

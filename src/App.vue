@@ -7,7 +7,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import { SHOPS_MODULE } from './store/namespaces';
+import { SHOPS_MODULE } from './store';
 
 export default {
   name: 'App',
