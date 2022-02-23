@@ -24,6 +24,7 @@ export default {
     ...mapState('shops', {
       notOkShops: (state) => state.items,
     }),
+    ...mapGetters(['shops/items']),
 
     /* non-namespaced modules */
     ...mapGetters(['brands', 'brands_brands']),

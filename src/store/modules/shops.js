@@ -2,6 +2,10 @@ const state = () => ({
   items: [],
 });
 
+const getters = {
+  items: (state) => state.items,
+};
+
 const mutations = {
   setItems (state, items) {
     state.items = items;
@@ -11,5 +15,6 @@ const mutations = {
 export default {
   namespaced: true,
   state,
+  getters,
   mutations,
 };
