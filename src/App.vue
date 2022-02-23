@@ -11,7 +11,7 @@ import { mapState, mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'App',
   computed: {
-    /* namespaced modules */
+    /* NAMESPACED MODULES */
     ...mapState('shops', ['items']),
     /* or */
     ...mapState('shops', { shops: 'items' }),
@@ -20,7 +20,7 @@ export default {
       notOkShops: (state) => state.items,
     }),
 
-    /* non-namespaced modules */
+    /* NON-NAMESPACED MODULES */
     /* works, but not Ok */
     ...mapState({
       notOkBrands: (state) => state.brands.brands,
@@ -32,14 +32,16 @@ export default {
     /* prefix-namespace is the best way */
     ...mapGetters({ bestBrands: 'brands_brands' }),
 
-    /* debug store */
+    /* DEBUG STORE */
     STORE () { return this.$store.state; },
   },
   methods: {
+    /* NAMESPACED MODULES */
     ...mapMutations('shops', ['setItems']),
     /* or */
     ...mapMutations('shops', { setShops: 'setItems' }),
 
+    /* NON-NAMESPACED MODULES */
     ...mapMutations(['setBrands']),
     /* or */
     ...mapMutations({ alsoSetBrands: 'setBrands' }),
