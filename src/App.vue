@@ -7,23 +7,22 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import { SHOPS_MODULE } from './store';
 
 export default {
   name: 'App',
   computed: {
-    ...mapState(SHOPS_MODULE, ['items']),
+    ...mapState('shops', ['items']),
     /* or */
-    ...mapState(SHOPS_MODULE, { shops: 'items' }),
+    ...mapState('shops', { shops: 'items' }),
     /* also works, but not recommended */
-    ...mapState(SHOPS_MODULE, {
+    ...mapState('shops', {
       alsoShops: (state) => state.items,
     }),
   },
   methods: {
-    ...mapMutations(SHOPS_MODULE, ['setItems']),
+    ...mapMutations('shops', ['setItems']),
     /* or */
-    ...mapMutations(SHOPS_MODULE, { setShops: 'setItems' }),
+    ...mapMutations('shops', { setShops: 'setItems' }),
 
     handleButtonClick () {
       this.setItems([1, 2, 3]);

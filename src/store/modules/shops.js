@@ -1,5 +1,3 @@
-export const SHOPS_MODULE = 'shops';
-
 const state = () => ({
   items: [],
 });
