@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <button type="button" @click="setItems([1, 2, 3])">Set shops</button>
+    <button type="button" @click="handleButtonClick">Set shops</button>
   </div>
 </template>
 
@@ -15,10 +15,13 @@ export default {
     /* or */
     ...mapState(SHOPS_MODULE, { shops: 'items' }),
   },
-  mutations: {
+  methods: {
     ...mapMutations(SHOPS_MODULE, ['setItems']),
     /* or */
     ...mapMutations(SHOPS_MODULE, { setShops: 'setItems' }),
+    handleButtonClick () {
+      this.setItems([1, 2, 3]);
+    },
   },
 };
 </script>
@@ -29,6 +32,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  text-align: center;
   margin-top: 60px;
 }
 </style>
