@@ -8,8 +8,6 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
 
-const SET_BRANDS = 'setBrands';
-
 export default {
   name: 'App',
   computed: {
