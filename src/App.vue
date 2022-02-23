@@ -6,23 +6,44 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
+
+const SET_BRANDS = 'setBrands';
 
 export default {
   name: 'App',
   computed: {
+    /* namespaced modules */
     ...mapState('shops', ['items']),
     /* or */
     ...mapState('shops', { shops: 'items' }),
     /* also works, but not recommended */
     ...mapState('shops', {
-      alsoShops: (state) => state.items,
+      notOkShops: (state) => state.items,
     }),
+
+    /* non-namespaced modules */
+    ...mapGetters(['brands']),
+    /* or */
+    ...mapGetters({ okBrands: 'brands' }),
+    /* works, but not Ok */
+    ...mapState({
+      notOkBrands: (state) => state.brands.brands,
+    }),
+
+    /* debug store */
+    STORE () {
+      return this.$store.state;
+    },
   },
   methods: {
     ...mapMutations('shops', ['setItems']),
     /* or */
     ...mapMutations('shops', { setShops: 'setItems' }),
+
+    ...mapMutations(['setBrands']),
+    /* or */
+    ...mapMutations({ alsoSetBrands: 'setBrands' }),
 
     handleButtonClick () {
       this.setItems([1, 2, 3]);
