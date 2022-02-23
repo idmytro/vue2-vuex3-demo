@@ -8,8 +8,6 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
 
-const SET_BRANDS = 'setBrands';
-
 export default {
   name: 'App',
   computed: {
@@ -23,18 +21,19 @@ export default {
     }),
 
     /* non-namespaced modules */
-    ...mapGetters(['brands']),
-    /* or */
-    ...mapGetters({ okBrands: 'brands' }),
     /* works, but not Ok */
     ...mapState({
       notOkBrands: (state) => state.brands.brands,
     }),
+    /* ok */
+    ...mapGetters(['brands']),
+    /* also ok */
+    ...mapGetters({ okBrands: 'brands' }),
+    /* prefix-namespace is the best way */
+    ...mapGetters({ bestBrands: 'brands_brands' }),
 
     /* debug store */
-    STORE () {
-      return this.$store.state;
-    },
+    STORE () { return this.$store.state; },
   },
   methods: {
     ...mapMutations('shops', ['setItems']),
@@ -44,6 +43,8 @@ export default {
     ...mapMutations(['setBrands']),
     /* or */
     ...mapMutations({ alsoSetBrands: 'setBrands' }),
+    /* best */
+    ...mapMutations({ bestWayToSetBrands: 'brands_setBrands' }),
 
     handleButtonClick () {
       this.setItems([1, 2, 3]);
