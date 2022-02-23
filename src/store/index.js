@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import shops from './modules/shops';
-import brands from './legacyModules/brands';
+import brands from './nonNamespacedModules/brands';
 
 Vue.use(Vuex);
 
