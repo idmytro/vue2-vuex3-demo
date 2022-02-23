@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <button type="button" @click="handleButtonClick">Set shops</button>
-    <p>{{ items }}</p>
+    <button type="button" @click="handleButtonClick">Set brands</button>
+    <p>{{ notOkBrands }}</p>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
     }),
 
     /* non-namespaced modules */
-    ...mapGetters(['brands']),
+    ...mapGetters(['brands', 'brands_brands']),
     /* or */
     ...mapGetters({ okBrands: 'brands' }),
     /* works, but not Ok */
@@ -44,7 +44,7 @@ export default {
     ...mapMutations({ alsoSetBrands: 'setBrands' }),
 
     handleButtonClick () {
-      this.setItems([1, 2, 3]);
+      this.setBrands([1, 2, 3]);
     },
   },
 };

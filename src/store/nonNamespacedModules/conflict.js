@@ -3,7 +3,7 @@ const state = () => ({
 });
 
 const getters = {
-  brands: (state) => state.brands,
+  // brands: (state) => state.brands,
 };
 
 const mutations = {
